@@ -73,7 +73,7 @@ npm run dev
 ## Build roadmap
 
 - [x] **Phase 0** — Tooling + monorepo scaffold
-- [ ] **Phase 1** — Spring Boot API skeleton, live on Render
+- [x] **Phase 1** — Spring Boot API skeleton, live on Render → https://portfolio-api-7cmx.onrender.com
 - [ ] **Phase 2** — Next.js frontend, live on Vercel
 - [ ] **Phase 3** — PostgreSQL + JPA persistence
 - [ ] **Phase 4** — Admin panel + JWT auth
