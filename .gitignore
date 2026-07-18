@@ -1,0 +1,21 @@
+# ---- Java / Maven (backend) ----
+backend/target/
+!backend/.mvn/wrapper/maven-wrapper.jar
+
+# ---- Node / Next.js (frontend) ----
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.env*.local
+
+# ---- Env / secrets ----
+.env
+.env.local
+*.local
+
+# ---- OS / editor ----
+.DS_Store
+.idea/
+.vscode/
+*.iml
