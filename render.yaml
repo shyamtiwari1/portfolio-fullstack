@@ -1,0 +1,16 @@
+# Render Blueprint — one-click deploy of the Spring Boot API.
+# In Render: New + → Blueprint → pick this repo → it reads this file.
+services:
+  - type: web
+    name: portfolio-api
+    runtime: docker
+    repo: https://github.com/shyamtiwari1/portfolio-fullstack
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    region: singapore
+    healthCheckPath: /api/health
+    envVars:
+      # Allow all origins for now; tighten to the Vercel URL in Phase 2.
+      - key: CORS_ALLOWED_ORIGINS
+        value: "*"
