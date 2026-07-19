@@ -1,3 +1,5 @@
+import Socials from "./Socials";
+
 export default function Footer() {
   return (
     <footer
@@ -9,16 +11,12 @@ export default function Footer() {
         fontSize: "0.88rem",
       }}
     >
-      <div className="container-x">
-        <div className="mono" style={{ marginBottom: 8 }}>
+      <div className="container-x" style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14 }}>
+        <div className="mono">
           shyam<span style={{ color: "var(--accent)" }}>.</span>tiwari
         </div>
-        <div>
-          Designed &amp; built by Shyam Tiwari · Bengaluru, India ·{" "}
-          <a href="mailto:shyamtiwari025@gmail.com" style={{ color: "var(--accent)" }}>
-            shyamtiwari025@gmail.com
-          </a>
-        </div>
+        <Socials size={20} gap={16} />
+        <div>Designed &amp; built by Shyam Tiwari · Bengaluru, India</div>
       </div>
     </footer>
   );

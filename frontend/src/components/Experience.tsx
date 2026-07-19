@@ -15,7 +15,7 @@ const jobs = [
   {
     role: "SDE-II, Backend",
     company: "ClearTax",
-    date: "Apr 2024 — Aug 2025",
+    date: "Jul 2024 — Aug 2025",
     points: [
       "Built customer-centric features across the Supply Chain suite, authoring detailed LLDs and design docs.",
       "Implemented end-to-end observability across microservices (Grafana, Prometheus, Coralogix), cutting diagnosis time.",
@@ -25,7 +25,7 @@ const jobs = [
   {
     role: "SDE-I, Backend",
     company: "ClearTax",
-    date: "Jul 2022 — Jul 2024",
+    date: "Jul 2022 — Jun 2024",
     points: [
       "Led end-to-end development of the company's financing product from concept to production.",
       "Independently built the repayment module with a focus on performance and scalable design.",

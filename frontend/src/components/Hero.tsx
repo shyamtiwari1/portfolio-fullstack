@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import Socials from "./Socials";
 
 export default function Hero() {
   return (
@@ -80,6 +81,11 @@ export default function Hero() {
             >
               in · LinkedIn
             </a>
+          </div>
+        </Reveal>
+        <Reveal delay={300}>
+          <div style={{ marginTop: 36 }}>
+            <Socials />
           </div>
         </Reveal>
       </div>

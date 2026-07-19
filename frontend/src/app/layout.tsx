@@ -13,9 +13,27 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shyam Tiwari — Backend Software Engineer",
+  metadataBase: new URL("https://shyamtiwari.vercel.app"),
+  title: "Shyam Tiwari — Backend Engineer",
   description:
-    "Shyam Tiwari — Backend Software Engineer (SDE-II) at Olyv, ex-ClearTax. IIT Roorkee. Building high-throughput, reliable distributed systems.",
+    "Backend engineer with 4+ years building fintech systems — lending platforms, KYC pipelines, and repayment engines. SDE-II @ Olyv, ex-ClearTax, IIT Roorkee.",
+  authors: [{ name: "Shyam Tiwari" }],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    title: "Shyam Tiwari — Backend Engineer",
+    description:
+      "4+ years building high-throughput fintech systems — KYC pipelines, lending platforms, repayment engines. SDE-II @ Olyv, ex-ClearTax, IIT Roorkee.",
+    url: "/",
+    images: ["/og-image.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shyam Tiwari — Backend Engineer",
+    description:
+      "4+ years building high-throughput fintech systems — KYC pipelines, lending platforms, repayment engines.",
+    images: ["/og-image.png"],
+  },
 };
 
 // Runs synchronously before first paint → sets the theme, no flash.

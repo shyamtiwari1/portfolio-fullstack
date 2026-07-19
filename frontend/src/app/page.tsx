@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import LatestThoughts from "@/components/LatestThoughts";
 import Footer from "@/components/Footer";
 
 export default async function Home() {
@@ -18,6 +19,7 @@ export default async function Home() {
         <Skills />
         <Experience />
         <Projects projects={projects} />
+        <LatestThoughts />
       </main>
       <Footer />
     </>
