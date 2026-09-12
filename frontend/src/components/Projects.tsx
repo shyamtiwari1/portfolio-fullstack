@@ -14,7 +14,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
       <div className="container-x">
         <Reveal>
           <div style={{ marginBottom: 48 }}>
-            <div className="sec-kicker">04 — What I&apos;ve built</div>
+            <div className="sec-kicker">03 — What I&apos;ve built</div>
             <h2 className="sec-title">Featured work</h2>
             <p className="mono" style={{ color: "var(--faint)", fontSize: "0.8rem", marginTop: 8 }}>
               ↳ fetched live from the Spring Boot API

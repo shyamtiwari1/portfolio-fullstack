@@ -1,5 +1,11 @@
+import fs from "node:fs";
+import path from "node:path";
+import Image from "next/image";
 import Reveal from "./Reveal";
 import Icon, { type IconName } from "./Icon";
+
+const PHOTO_PATH = "/profile.jpg";
+const hasPhoto = fs.existsSync(path.join(process.cwd(), "public", PHOTO_PATH));
 
 const qualities: { icon: IconName; title: string }[] = [
   { icon: "network", title: "Systems thinker" },
@@ -31,6 +37,22 @@ export default function About() {
         >
           <Reveal>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {hasPhoto && (
+                <Image
+                  src={PHOTO_PATH}
+                  alt="Shyam Tiwari"
+                  width={120}
+                  height={120}
+                  style={{
+                    width: 120,
+                    height: 120,
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    border: "1px solid var(--border)",
+                    marginBottom: 8,
+                  }}
+                />
+              )}
               <p style={{ color: "var(--muted)", fontSize: "1.05rem" }}>
                 I studied B.Tech in Civil Engineering at IIT Roorkee (2018–2022) — the same
                 appetite for hard problems that got me an All-India Rank of 3133 in JEE Mains.
