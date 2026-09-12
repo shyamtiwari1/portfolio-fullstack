@@ -63,10 +63,14 @@ export default function Hero() {
           </p>
         </Reveal>
         <Reveal delay={180}>
-          <p style={{ fontSize: "1.1rem", color: "var(--muted)", maxWidth: 620, marginBottom: 34 }}>
-            I design and build high-throughput, reliable distributed systems — the kind that
-            quietly process hundreds of thousands of requests an hour without breaking. Deep in
-            Java &amp; Spring Boot, event-driven architecture, and clean, pattern-driven design.
+          <p style={{ fontSize: "1.1rem", color: "var(--muted)", maxWidth: 620, marginBottom: 6 }}>
+            Building things, chasing new experiences, getting a little better every day.
+          </p>
+          <p
+            className="mono"
+            style={{ fontSize: "1rem", color: "var(--accent-2)", maxWidth: 620, marginBottom: 34, letterSpacing: "0.3px" }}
+          >
+            Code • Music • Gym • Roads • Repeat.
           </p>
         </Reveal>
         <Reveal delay={240}>
