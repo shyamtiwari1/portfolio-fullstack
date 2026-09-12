@@ -107,6 +107,9 @@ a { color: inherit; text-decoration: none; }
   .about-grid { grid-template-columns: 1fr !important; }
   .proj-grid { grid-template-columns: 1fr !important; }
   .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .hero-grid { grid-template-columns: 1fr !important; }
+  .hero-grid img { justify-self: center; }
+  .now-grid { grid-template-columns: 1fr !important; }
 }
 .mobile-menu { display: none; }
 
