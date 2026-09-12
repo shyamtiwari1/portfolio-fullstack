@@ -4,7 +4,7 @@ import Image from "next/image";
 import Reveal from "./Reveal";
 import Icon, { type IconName } from "./Icon";
 
-const PHOTO_PATH = "/profile.jpg";
+const PHOTO_PATH = "/profile.jpeg";
 const hasPhoto = fs.existsSync(path.join(process.cwd(), "public", PHOTO_PATH));
 
 const qualities: { icon: IconName; title: string }[] = [

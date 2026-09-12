@@ -3,7 +3,7 @@ import path from "node:path";
 import Image from "next/image";
 import Reveal from "./Reveal";
 
-const NOW_PHOTO_PATH = "/now-photo.jpg";
+const NOW_PHOTO_PATH = "/now-photo.jpeg";
 const hasNowPhoto = fs.existsSync(path.join(process.cwd(), "public", NOW_PHOTO_PATH));
 
 const points = [
