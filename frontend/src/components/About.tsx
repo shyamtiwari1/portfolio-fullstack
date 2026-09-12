@@ -1,10 +1,11 @@
 import Reveal from "./Reveal";
+import Icon, { type IconName } from "./Icon";
 
-const qualities = [
-  { icon: "🧠", title: "Systems thinker", desc: "I reach for the design that keeps a system extensible as requirements change, not the one that looks clever today." },
-  { icon: "🛡️", title: "Reliability-obsessed", desc: "I design for the failure cases first — edge cases get handled before they get a chance to page anyone." },
-  { icon: "🚀", title: "Ownership-driven", desc: "I take products from a blank page to production, owning the design, the tradeoffs, and the delivery." },
-  { icon: "🔍", title: "Deep debugger", desc: "When something breaks, I don't stop at the symptom — I trace it back to the root cause and fix that." },
+const qualities: { icon: IconName; title: string; desc: string }[] = [
+  { icon: "network", title: "Systems thinker", desc: "I reach for the design that keeps a system extensible as requirements change, not the one that looks clever today." },
+  { icon: "shield", title: "Reliability-obsessed", desc: "I design for the failure cases first — edge cases get handled before they get a chance to page anyone." },
+  { icon: "trending-up", title: "Ownership-driven", desc: "I take products from a blank page to production, owning the design, the tradeoffs, and the delivery." },
+  { icon: "search", title: "Deep debugger", desc: "When something breaks, I don't stop at the symptom — I trace it back to the root cause and fix that." },
 ];
 
 const stats = [
@@ -52,10 +53,24 @@ export default function About() {
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               {qualities.map((q) => (
                 <div key={q.title} className="card" style={{ padding: "16px 18px" }}>
-                  <h4 style={{ fontSize: "1rem", marginBottom: 4 }}>
-                    <span style={{ marginRight: 8 }}>{q.icon}</span>
-                    {q.title}
-                  </h4>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
+                    <span
+                      style={{
+                        width: 34,
+                        height: 34,
+                        borderRadius: 9,
+                        background: "rgba(124, 92, 255, 0.12)",
+                        color: "var(--accent)",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Icon name={q.icon} size={17} />
+                    </span>
+                    <h4 style={{ fontSize: "1rem", margin: 0 }}>{q.title}</h4>
+                  </div>
                   <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{q.desc}</p>
                 </div>
               ))}

@@ -1,10 +1,11 @@
 import type { Project } from "@/lib/api";
 import Reveal from "./Reveal";
+import Icon, { type IconName } from "./Icon";
 
-const companyIcon: Record<string, string> = {
-  Olyv: "🛂",
-  ClearTax: "💳",
-  Personal: "👤",
+const companyIcon: Record<string, IconName> = {
+  Olyv: "shield",
+  ClearTax: "card",
+  Personal: "user",
 };
 
 export default function Projects({ projects }: { projects: Project[] }) {
@@ -34,7 +35,20 @@ export default function Projects({ projects }: { projects: Project[] }) {
               <Reveal key={p.id} delay={Math.min(i, 4) * 50}>
                 <div className="card" style={{ padding: 28, height: "100%", display: "flex", flexDirection: "column" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 14 }}>
-                    <span style={{ fontSize: "1.8rem" }}>{companyIcon[p.company] ?? "🧩"}</span>
+                    <span
+                      style={{
+                        width: 40,
+                        height: 40,
+                        borderRadius: 10,
+                        background: "rgba(124, 92, 255, 0.12)",
+                        color: "var(--accent)",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <Icon name={companyIcon[p.company] ?? "briefcase"} size={19} />
+                    </span>
                     <span className="mono" style={{ fontSize: "0.72rem", color: "var(--faint)", border: "1px solid var(--border)", padding: "3px 8px", borderRadius: 6 }}>
                       {p.company}
                     </span>

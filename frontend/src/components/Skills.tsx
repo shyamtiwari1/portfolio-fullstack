@@ -1,12 +1,13 @@
 import Reveal from "./Reveal";
+import Icon, { type IconName } from "./Icon";
 
-const groups = [
-  { icon: "⚙️", title: "Languages", items: ["Java", "Python", "SQL"] },
-  { icon: "🧩", title: "Frameworks", items: ["Spring Boot", "Play", "Django"] },
-  { icon: "🔄", title: "Distributed & Async", items: ["Kafka", "Temporal", "Redis"] },
-  { icon: "🗄️", title: "Data Stores", items: ["PostgreSQL", "MongoDB", "Redis"] },
-  { icon: "☁️", title: "Cloud & Infra", items: ["AWS", "GCP", "Docker"] },
-  { icon: "📊", title: "Observability", items: ["Grafana", "Prometheus", "Coralogix", "OpenSearch", "Kibana"] },
+const groups: { icon: IconName; title: string; items: string[] }[] = [
+  { icon: "code", title: "Languages", items: ["Java", "Python", "SQL"] },
+  { icon: "layers", title: "Frameworks", items: ["Spring Boot", "Play", "Django"] },
+  { icon: "swap", title: "Distributed & Async", items: ["Kafka", "Temporal", "Redis"] },
+  { icon: "database", title: "Data Stores", items: ["PostgreSQL", "MongoDB", "Redis"] },
+  { icon: "cloud", title: "Cloud & Infra", items: ["AWS", "GCP", "Docker"] },
+  { icon: "bar-chart", title: "Observability", items: ["Grafana", "Prometheus", "Coralogix", "OpenSearch", "Kibana"] },
 ];
 
 export default function Skills() {
@@ -26,8 +27,22 @@ export default function Skills() {
           {groups.map((g, i) => (
             <Reveal key={g.title} delay={Math.min(i, 4) * 50}>
               <div className="card" style={{ padding: 26 }}>
-                <h3 style={{ fontSize: "1.05rem", marginBottom: 16 }}>
-                  <span style={{ marginRight: 10, fontSize: "1.3rem" }}>{g.icon}</span>
+                <h3 style={{ fontSize: "1.05rem", marginBottom: 16, display: "flex", alignItems: "center", gap: 10 }}>
+                  <span
+                    style={{
+                      width: 32,
+                      height: 32,
+                      borderRadius: 8,
+                      background: "rgba(34, 211, 238, 0.12)",
+                      color: "var(--accent-2)",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Icon name={g.icon} size={16} />
+                  </span>
                   {g.title}
                 </h3>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
