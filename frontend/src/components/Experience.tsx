@@ -41,21 +41,22 @@ export default function Experience() {
             {timeline.map((e) => (
               <div
                 key={e.heading + e.date}
+                className="journey-row"
                 style={{
                   position: "relative",
                   display: "flex",
                   justifyContent: "space-between",
                   flexWrap: "wrap",
                   gap: 6,
-                  padding: "7px 0",
+                  padding: "7px 12px 7px 0",
                 }}
               >
                 <span
+                  className="journey-dot"
                   style={{
                     position: "absolute",
                     left: -20,
                     top: "50%",
-                    transform: "translateY(-50%)",
                     width: 9,
                     height: 9,
                     borderRadius: "50%",
