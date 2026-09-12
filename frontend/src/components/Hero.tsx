@@ -52,10 +52,9 @@ export default function Hero() {
         <Reveal delay={120}>
           <p
             style={{
-              fontSize: "clamp(1.3rem, 3.2vw, 1.8rem)",
+              fontSize: "clamp(1rem, 2.2vw, 1.3rem)",
               fontWeight: 600,
               color: "var(--text)",
-              maxWidth: 620,
               marginBottom: 6,
             }}
           >
@@ -63,7 +62,7 @@ export default function Hero() {
           </p>
           <p
             className="mono"
-            style={{ fontSize: "1rem", color: "var(--accent-2)", maxWidth: 620, marginBottom: 34, letterSpacing: "0.3px" }}
+            style={{ fontSize: "1rem", color: "var(--accent-2)", marginBottom: 34, letterSpacing: "0.3px" }}
           >
             Code • Music • Gym • Roads • Repeat.
           </p>
