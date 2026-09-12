@@ -1,11 +1,8 @@
-import fs from "node:fs";
-import path from "node:path";
 import Image from "next/image";
 import Reveal from "./Reveal";
 import Socials from "./Socials";
 
 const HERO_PHOTO_PATH = "/hero-photo.jpeg";
-const hasHeroPhoto = fs.existsSync(path.join(process.cwd(), "public", HERO_PHOTO_PATH));
 
 export default function Hero() {
   return (
@@ -18,7 +15,7 @@ export default function Hero() {
           className="hero-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: hasHeroPhoto ? "1.3fr auto" : "1fr",
+            gridTemplateColumns: "1.3fr auto",
             gap: 48,
             alignItems: "center",
           }}
@@ -103,24 +100,22 @@ export default function Hero() {
           </div>
         </Reveal>
         </div>
-        {hasHeroPhoto && (
-          <Reveal delay={60}>
-            <Image
-              src={HERO_PHOTO_PATH}
-              alt="Shyam Tiwari"
-              width={280}
-              height={280}
-              style={{
-                width: 280,
-                height: 280,
-                borderRadius: 24,
-                objectFit: "cover",
-                border: "1px solid var(--border)",
-              }}
-              priority
-            />
-          </Reveal>
-        )}
+        <Reveal delay={60}>
+          <Image
+            src={HERO_PHOTO_PATH}
+            alt="Shyam Tiwari"
+            width={280}
+            height={280}
+            style={{
+              width: 280,
+              height: 280,
+              borderRadius: 24,
+              objectFit: "cover",
+              border: "1px solid var(--border)",
+            }}
+            priority
+          />
+        </Reveal>
         </div>
       </div>
     </header>

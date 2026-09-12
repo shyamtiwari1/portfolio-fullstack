@@ -1,11 +1,8 @@
-import fs from "node:fs";
-import path from "node:path";
 import Image from "next/image";
 import Reveal from "./Reveal";
 import Icon, { type IconName } from "./Icon";
 
 const PHOTO_PATH = "/profile.jpeg";
-const hasPhoto = fs.existsSync(path.join(process.cwd(), "public", PHOTO_PATH));
 
 const qualities: { icon: IconName; title: string }[] = [
   { icon: "network", title: "Systems thinker" },
@@ -37,22 +34,20 @@ export default function About() {
         >
           <Reveal>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-              {hasPhoto && (
-                <Image
-                  src={PHOTO_PATH}
-                  alt="Shyam Tiwari"
-                  width={120}
-                  height={120}
-                  style={{
-                    width: 120,
-                    height: 120,
-                    borderRadius: "50%",
-                    objectFit: "cover",
-                    border: "1px solid var(--border)",
-                    marginBottom: 8,
-                  }}
-                />
-              )}
+              <Image
+                src={PHOTO_PATH}
+                alt="Shyam Tiwari"
+                width={120}
+                height={120}
+                style={{
+                  width: 120,
+                  height: 120,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  border: "1px solid var(--border)",
+                  marginBottom: 8,
+                }}
+              />
               <p style={{ color: "var(--muted)", fontSize: "1.05rem" }}>
                 I&apos;ve always been more interested in why something works than in getting it
                 done the fastest way — the instinct that pushed me to an All-India Rank of 3133 in
