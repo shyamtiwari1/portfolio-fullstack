@@ -54,21 +54,22 @@ export default function About() {
                 />
               )}
               <p style={{ color: "var(--muted)", fontSize: "1.05rem" }}>
-                I studied B.Tech in Civil Engineering at IIT Roorkee (2018–2022) — the same
-                appetite for hard problems that got me an All-India Rank of 3133 in JEE Mains.
-                After graduating, I pivoted into software engineering, and that appetite now goes
-                into distributed systems.
+                I&apos;ve always been more interested in why something works than in getting it
+                done the fastest way — the instinct that pushed me to an All-India Rank of 3133 in
+                JEE Mains, and later pulled me sideways out of a Civil Engineering degree into
+                software. I don&apos;t mind taking the long way round if it means actually
+                understanding the thing.
               </p>
               <p style={{ color: "var(--muted)", fontSize: "1.05rem" }}>
-                I started at ClearTax in 2022 — first leading the end-to-end build of a financing
-                product and its repayment module, then moving into observability and workflow
-                orchestration for the Supply Chain team. Since September 2025, I&apos;ve been an
-                SDE-II at Olyv, building the KYC validation platform that lending partners onboard
-                onto.
+                I&apos;m patient with hard problems and impatient with sloppy ones — I&apos;d
+                rather lose a day getting a design right than ship something I&apos;ll have to
+                apologize for later. Ownership isn&apos;t a checkbox for me; if my name&apos;s on
+                it, I want to be the one who understands it best.
               </p>
               <p style={{ color: "var(--muted)", fontSize: "1.05rem" }}>
-                What hasn&apos;t changed across either company: I care about systems that stay
-                correct under load, and code that the next engineer can actually reason about.
+                Outside of it, I&apos;m chasing the same kind of improvement everywhere else — a
+                barbell, a road trip, a new song to learn. Four years in, that&apos;s still the
+                throughline: build things, get a little better at them, repeat.
               </p>
             </div>
           </Reveal>
