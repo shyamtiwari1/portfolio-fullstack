@@ -5,8 +5,8 @@ const groups = [
   { icon: "🧩", title: "Frameworks", items: ["Spring Boot", "Play", "Django"] },
   { icon: "🔄", title: "Distributed & Async", items: ["Kafka", "Temporal", "Redis"] },
   { icon: "🗄️", title: "Data Stores", items: ["PostgreSQL", "MongoDB", "Redis"] },
-  { icon: "☁️", title: "Cloud & Infra", items: ["AWS", "Docker"] },
-  { icon: "📊", title: "Observability", items: ["Grafana", "Prometheus", "Coralogix"] },
+  { icon: "☁️", title: "Cloud & Infra", items: ["AWS", "GCP", "Docker"] },
+  { icon: "📊", title: "Observability", items: ["Grafana", "Prometheus", "Coralogix", "OpenSearch", "Kibana"] },
 ];
 
 export default function Skills() {

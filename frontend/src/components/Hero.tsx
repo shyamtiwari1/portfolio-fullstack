@@ -47,23 +47,18 @@ export default function Hero() {
             }}
           >
             Hi, I&apos;m <span className="accent-text">Shyam Tiwari</span>.
-            <br />I build systems that scale.
           </h1>
         </Reveal>
         <Reveal delay={120}>
           <p
             style={{
-              fontSize: "clamp(1.15rem, 3vw, 1.5rem)",
+              fontSize: "clamp(1.3rem, 3.2vw, 1.8rem)",
               fontWeight: 600,
-              color: "var(--muted)",
-              marginBottom: 22,
+              color: "var(--text)",
+              maxWidth: 620,
+              marginBottom: 6,
             }}
           >
-            Backend Software Engineer · SDE-II @ Olyv · ex-ClearTax · IIT Roorkee
-          </p>
-        </Reveal>
-        <Reveal delay={180}>
-          <p style={{ fontSize: "1.1rem", color: "var(--muted)", maxWidth: 620, marginBottom: 6 }}>
             Building things, chasing new experiences, getting a little better every day.
           </p>
           <p

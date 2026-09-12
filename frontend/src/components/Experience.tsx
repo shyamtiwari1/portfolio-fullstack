@@ -1,9 +1,18 @@
 import Reveal from "./Reveal";
 
-const jobs = [
+type Entry = {
+  kind: "education" | "work";
+  heading: string;
+  org: string;
+  date: string;
+  points: string[];
+};
+
+const timeline: Entry[] = [
   {
-    role: "SDE-II",
-    company: "Olyv India",
+    kind: "work",
+    heading: "SDE-II",
+    org: "Olyv India",
     date: "Sep 2025 — Present",
     points: [
       "Designed & built a high-throughput KYC data validation service processing 500K requests/hour, enabling lender-specific validation policies with zero code changes.",
@@ -13,8 +22,9 @@ const jobs = [
     ],
   },
   {
-    role: "SDE-II, Backend",
-    company: "ClearTax",
+    kind: "work",
+    heading: "SDE-II, Backend",
+    org: "ClearTax",
     date: "Jul 2024 — Aug 2025",
     points: [
       "Built customer-centric features across the Supply Chain suite, authoring detailed LLDs and design docs.",
@@ -23,8 +33,9 @@ const jobs = [
     ],
   },
   {
-    role: "SDE-I, Backend",
-    company: "ClearTax",
+    kind: "work",
+    heading: "SDE-I, Backend",
+    org: "ClearTax",
     date: "Jul 2022 — Jun 2024",
     points: [
       "Led end-to-end development of the company's financing product from concept to production.",
@@ -33,11 +44,13 @@ const jobs = [
     ],
   },
   {
-    role: "Web Development Intern",
-    company: "School of Market Studies",
-    date: "May 2021 — Jul 2021",
+    kind: "education",
+    heading: "B.Tech, Computer Science",
+    org: "IIT Roorkee",
+    date: "Jul 2018 — Apr 2022",
     points: [
-      "Built a full-stack stock-analysis platform in Django (MVT), tested across 500+ stocks with integrated algorithms.",
+      "AIR 3133 in JEE Mains and AIR 4293 in JEE Advanced (2018).",
+      "Co-head, Child Rights and You (CRY) — IIT Roorkee chapter · Cell Secretary, Administration, NSS IIT Roorkee.",
     ],
   },
 ];
@@ -48,42 +61,65 @@ export default function Experience() {
       <div className="container-x">
         <Reveal>
           <div style={{ marginBottom: 48 }}>
-            <div className="sec-kicker">03 — Where I&apos;ve worked</div>
-            <h2 className="sec-title">Experience</h2>
+            <div className="sec-kicker">03 — Where I&apos;ve been</div>
+            <h2 className="sec-title">My journey</h2>
           </div>
         </Reveal>
-        <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-          {jobs.map((j) => (
-            <Reveal key={j.role + j.date}>
-              <div
-                className="card"
-                style={{ padding: 24, borderLeft: "3px solid var(--accent)" }}
-              >
-                <div
+        <div style={{ position: "relative", paddingLeft: 28 }}>
+          <div
+            style={{
+              position: "absolute",
+              left: 6,
+              top: 8,
+              bottom: 8,
+              width: 2,
+              background: "var(--border)",
+            }}
+          />
+          {timeline.map((e, i) => (
+            <Reveal key={e.heading + e.date}>
+              <div style={{ position: "relative", marginBottom: i === timeline.length - 1 ? 0 : 32 }}>
+                <span
                   style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    flexWrap: "wrap",
-                    gap: 6,
-                    alignItems: "baseline",
+                    position: "absolute",
+                    left: -28,
+                    top: 6,
+                    width: 14,
+                    height: 14,
+                    borderRadius: "50%",
+                    background: e.kind === "education" ? "var(--accent-2)" : "var(--accent)",
+                    boxShadow: "0 0 0 4px var(--bg)",
                   }}
-                >
-                  <div style={{ fontSize: "1.2rem", fontWeight: 700 }}>
-                    {j.role} ·{" "}
-                    <span style={{ color: "var(--accent)" }}>{j.company}</span>
+                />
+                <div className="card" style={{ padding: 24 }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      flexWrap: "wrap",
+                      gap: 6,
+                      alignItems: "baseline",
+                    }}
+                  >
+                    <div style={{ fontSize: "1.2rem", fontWeight: 700 }}>
+                      {e.heading} ·{" "}
+                      <span style={{ color: e.kind === "education" ? "var(--accent-2)" : "var(--accent)" }}>
+                        {e.org}
+                      </span>
+                    </div>
+                    <span className="mono" style={{ fontSize: "0.82rem", color: "var(--faint)" }}>
+                      {e.date}
+                    </span>
                   </div>
-                  <span className="mono" style={{ fontSize: "0.82rem", color: "var(--faint)" }}>
-                    {j.date}
-                  </span>
+                  <ul style={{ listStyle: "none", marginTop: 14, display: "flex", flexDirection: "column", gap: 9 }}>
+                    {e.points.map((p, i2) => (
+                      <li key={i2} style={{ color: "var(--muted)", paddingLeft: 22, position: "relative", fontSize: "0.98rem" }}>
+                        <span style={{ position: "absolute", left: 0, color: "var(--accent-2)" }}>▹</span>
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul style={{ listStyle: "none", marginTop: 14, display: "flex", flexDirection: "column", gap: 9 }}>
-                  {j.points.map((p, i) => (
-                    <li key={i} style={{ color: "var(--muted)", paddingLeft: 22, position: "relative", fontSize: "0.98rem" }}>
-                      <span style={{ position: "absolute", left: 0, color: "var(--accent-2)" }}>▹</span>
-                      {p}
-                    </li>
-                  ))}
-                </ul>
               </div>
             </Reveal>
           ))}

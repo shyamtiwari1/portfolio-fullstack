@@ -1,16 +1,16 @@
 import Reveal from "./Reveal";
 
 const qualities = [
-  { icon: "🧠", title: "Systems thinker", desc: "The right pattern — Strategy, Factory, Template Method — so systems stay extensible, not clever." },
-  { icon: "🛡️", title: "Reliability-obsessed", desc: "Redis distributed locks, idempotency, AES-encrypted metadata — edge cases handled before they page me." },
-  { icon: "🚀", title: "Ownership-driven", desc: "I've taken products from a blank page to production, owning design docs, LLDs and delivery." },
-  { icon: "🔍", title: "Deep debugger", desc: "Structured error attribution and full-stack observability (Grafana, Prometheus, Coralogix)." },
+  { icon: "🧠", title: "Systems thinker", desc: "I reach for the design that keeps a system extensible as requirements change, not the one that looks clever today." },
+  { icon: "🛡️", title: "Reliability-obsessed", desc: "I design for the failure cases first — edge cases get handled before they get a chance to page anyone." },
+  { icon: "🚀", title: "Ownership-driven", desc: "I take products from a blank page to production, owning the design, the tradeoffs, and the delivery." },
+  { icon: "🔍", title: "Deep debugger", desc: "When something breaks, I don't stop at the symptom — I trace it back to the root cause and fix that." },
 ];
 
 const stats = [
   { num: "4+", lbl: "Years of experience" },
   { num: "500K", lbl: "Requests/hour served" },
-  { num: "3 cos", lbl: "Olyv · ClearTax · SMS" },
+  { num: "2 cos", lbl: "Olyv · ClearTax" },
   { num: "IIT", lbl: "Roorkee, B.Tech" },
 ];
 
@@ -31,19 +31,20 @@ export default function About() {
           <Reveal>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <p style={{ color: "var(--muted)", fontSize: "1.05rem" }}>
-                I&apos;m a backend engineer with 4+ years of experience building the systems that
-                power fintech products — lending platforms, KYC pipelines, repayment engines and
-                supply-chain tooling.
+                I studied B.Tech at IIT Roorkee (2018–2022), graduating into backend engineering
+                with the same appetite for hard problems that got me an All-India Rank of 3133 in
+                JEE Mains. Four years in, that appetite now goes into distributed systems.
               </p>
               <p style={{ color: "var(--muted)", fontSize: "1.05rem" }}>
-                Currently an SDE-II at Olyv, where I built a high-throughput KYC data validation
-                service handling 500K requests/hour with a pluggable, lender-configurable design.
-                Before that, at ClearTax, I led the end-to-end build of a financing product and its
-                repayment module.
+                I started at ClearTax in 2022 — first leading the end-to-end build of a financing
+                product and its repayment module, then moving into observability and workflow
+                orchestration for the Supply Chain team. Since September 2025, I&apos;ve been an
+                SDE-II at Olyv, building the KYC validation platform that lending partners onboard
+                onto.
               </p>
               <p style={{ color: "var(--muted)", fontSize: "1.05rem" }}>
-                I studied B.Tech at IIT Roorkee and cracked JEE with an All-India Rank of 3133
-                (Mains). The same appetite for hard problems now goes into distributed systems.
+                What hasn&apos;t changed across either company: I care about systems that stay
+                correct under load, and code that the next engineer can actually reason about.
               </p>
             </div>
           </Reveal>
