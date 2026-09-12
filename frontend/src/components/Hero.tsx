@@ -4,7 +4,7 @@ import Image from "next/image";
 import Reveal from "./Reveal";
 import Socials from "./Socials";
 
-const HERO_PHOTO_PATH = "/hero-photo.jpg";
+const HERO_PHOTO_PATH = "/hero-photo.jpeg";
 const hasHeroPhoto = fs.existsSync(path.join(process.cwd(), "public", HERO_PHOTO_PATH));
 
 export default function Hero() {
