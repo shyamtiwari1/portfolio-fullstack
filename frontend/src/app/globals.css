@@ -86,6 +86,11 @@ a { color: inherit; text-decoration: none; }
 
 .social-link:hover { color: var(--accent) !important; border-color: var(--accent) !important; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(124, 92, 255, 0.18); }
 
+.journey-row { border-radius: 8px; transform-origin: left center; transition: transform 0.25s ease, background 0.25s ease; }
+.journey-row:hover { transform: scale(1.06); background: var(--bg-soft); }
+.journey-dot { transform: translateY(-50%); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.journey-row:hover .journey-dot { transform: translateY(-50%) scale(1.8); box-shadow: 0 0 0 5px rgba(124, 92, 255, 0.18); }
+
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
@@ -100,9 +105,11 @@ a { color: inherit; text-decoration: none; }
 /* Responsive */
 @media (max-width: 860px) {
   .about-grid { grid-template-columns: 1fr !important; }
-  .skills-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .proj-grid { grid-template-columns: 1fr !important; }
   .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .hero-grid { grid-template-columns: 1fr !important; }
+  .hero-grid img { justify-self: center; }
+  .now-grid { grid-template-columns: 1fr !important; }
 }
 .mobile-menu { display: none; }
 
@@ -110,7 +117,6 @@ a { color: inherit; text-decoration: none; }
   .nav-links { display: none !important; }
   .nav-toggle { display: flex !important; }
   .mobile-menu { display: block; }
-  .skills-grid { grid-template-columns: 1fr !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {

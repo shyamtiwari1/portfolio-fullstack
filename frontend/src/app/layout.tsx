@@ -14,14 +14,14 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://shyamtiwari.vercel.app"),
-  title: "Shyam Tiwari — Backend Engineer",
+  title: "Shyam Tiwari — Software Engineer",
   description:
-    "Backend engineer with 4+ years building fintech systems — lending platforms, KYC pipelines, and repayment engines. SDE-II @ Olyv, ex-ClearTax, IIT Roorkee.",
+    "Software engineer with 4+ years building fintech systems — lending platforms, KYC pipelines, and repayment engines. SDE-II @ Olyv, ex-ClearTax, IIT Roorkee.",
   authors: [{ name: "Shyam Tiwari" }],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    title: "Shyam Tiwari — Backend Engineer",
+    title: "Shyam Tiwari — Software Engineer",
     description:
       "4+ years building high-throughput fintech systems — KYC pipelines, lending platforms, repayment engines. SDE-II @ Olyv, ex-ClearTax, IIT Roorkee.",
     url: "/",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shyam Tiwari — Backend Engineer",
+    title: "Shyam Tiwari — Software Engineer",
     description:
       "4+ years building high-throughput fintech systems — KYC pipelines, lending platforms, repayment engines.",
     images: ["/og-image.png"],

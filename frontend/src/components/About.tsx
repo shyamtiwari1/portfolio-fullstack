@@ -1,16 +1,23 @@
+import fs from "node:fs";
+import path from "node:path";
+import Image from "next/image";
 import Reveal from "./Reveal";
+import Icon, { type IconName } from "./Icon";
 
-const qualities = [
-  { icon: "🧠", title: "Systems thinker", desc: "The right pattern — Strategy, Factory, Template Method — so systems stay extensible, not clever." },
-  { icon: "🛡️", title: "Reliability-obsessed", desc: "Redis distributed locks, idempotency, AES-encrypted metadata — edge cases handled before they page me." },
-  { icon: "🚀", title: "Ownership-driven", desc: "I've taken products from a blank page to production, owning design docs, LLDs and delivery." },
-  { icon: "🔍", title: "Deep debugger", desc: "Structured error attribution and full-stack observability (Grafana, Prometheus, Coralogix)." },
+const PHOTO_PATH = "/profile.jpg";
+const hasPhoto = fs.existsSync(path.join(process.cwd(), "public", PHOTO_PATH));
+
+const qualities: { icon: IconName; title: string }[] = [
+  { icon: "network", title: "Systems thinker" },
+  { icon: "shield", title: "Reliability-obsessed" },
+  { icon: "trending-up", title: "Ownership-driven" },
+  { icon: "search", title: "Deep debugger" },
 ];
 
 const stats = [
   { num: "4+", lbl: "Years of experience" },
   { num: "500K", lbl: "Requests/hour served" },
-  { num: "3 cos", lbl: "Olyv · ClearTax · SMS" },
+  { num: "2 cos", lbl: "Olyv · ClearTax" },
   { num: "IIT", lbl: "Roorkee, B.Tech" },
 ];
 
@@ -30,32 +37,66 @@ export default function About() {
         >
           <Reveal>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {hasPhoto && (
+                <Image
+                  src={PHOTO_PATH}
+                  alt="Shyam Tiwari"
+                  width={120}
+                  height={120}
+                  style={{
+                    width: 120,
+                    height: 120,
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    border: "1px solid var(--border)",
+                    marginBottom: 8,
+                  }}
+                />
+              )}
               <p style={{ color: "var(--muted)", fontSize: "1.05rem" }}>
-                I&apos;m a backend engineer with 4+ years of experience building the systems that
-                power fintech products — lending platforms, KYC pipelines, repayment engines and
-                supply-chain tooling.
+                I&apos;ve always been more interested in why something works than in getting it
+                done the fastest way — the instinct that pushed me to an All-India Rank of 3133 in
+                JEE Mains, and later pulled me sideways out of a Civil Engineering degree into
+                software. I don&apos;t mind taking the long way round if it means actually
+                understanding the thing.
               </p>
               <p style={{ color: "var(--muted)", fontSize: "1.05rem" }}>
-                Currently an SDE-II at Olyv, where I built a high-throughput KYC data validation
-                service handling 500K requests/hour with a pluggable, lender-configurable design.
-                Before that, at ClearTax, I led the end-to-end build of a financing product and its
-                repayment module.
+                I&apos;m patient with hard problems and impatient with sloppy ones — I&apos;d
+                rather lose a day getting a design right than ship something I&apos;ll have to
+                apologize for later. Ownership isn&apos;t a checkbox for me; if my name&apos;s on
+                it, I want to be the one who understands it best.
               </p>
               <p style={{ color: "var(--muted)", fontSize: "1.05rem" }}>
-                I studied B.Tech at IIT Roorkee and cracked JEE with an All-India Rank of 3133
-                (Mains). The same appetite for hard problems now goes into distributed systems.
+                Outside of it, I&apos;m chasing the same kind of improvement everywhere else — a
+                barbell, a road trip, a new song to learn. Four years in, that&apos;s still the
+                throughline: build things, get a little better at them, repeat.
               </p>
             </div>
           </Reveal>
           <Reveal delay={80}>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               {qualities.map((q) => (
-                <div key={q.title} className="card" style={{ padding: "16px 18px" }}>
-                  <h4 style={{ fontSize: "1rem", marginBottom: 4 }}>
-                    <span style={{ marginRight: 8 }}>{q.icon}</span>
-                    {q.title}
-                  </h4>
-                  <p style={{ color: "var(--muted)", fontSize: "0.9rem" }}>{q.desc}</p>
+                <div
+                  key={q.title}
+                  className="card"
+                  style={{ padding: "16px 18px", display: "flex", alignItems: "center", gap: 12 }}
+                >
+                  <span
+                    style={{
+                      width: 34,
+                      height: 34,
+                      borderRadius: 9,
+                      background: "rgba(124, 92, 255, 0.12)",
+                      color: "var(--accent)",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Icon name={q.icon} size={17} />
+                  </span>
+                  <h4 style={{ fontSize: "1rem", margin: 0 }}>{q.title}</h4>
                 </div>
               ))}
             </div>

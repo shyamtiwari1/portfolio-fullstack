@@ -1,45 +1,38 @@
 import Reveal from "./Reveal";
 
-const jobs = [
+type Entry = {
+  kind: "education" | "work";
+  heading: string;
+  org: string;
+  date: string;
+  summary?: string;
+};
+
+const timeline: Entry[] = [
   {
-    role: "SDE-II",
-    company: "Olyv India",
+    kind: "work",
+    heading: "SDE-II",
+    org: "Olyv India",
     date: "Sep 2025 — Present",
-    points: [
-      "Designed & built a high-throughput KYC data validation service processing 500K requests/hour, enabling lender-specific validation policies with zero code changes.",
-      "Architected a pluggable validation framework using Strategy, Factory & Template Method patterns over a common processing pipeline.",
-      "Solved race conditions in lender-loan onboarding with Redis distributed locks and idempotent processing.",
-      "Implemented AES-encrypted metadata handling & structured error attribution across multi-service KYC workflows.",
-    ],
+    summary: "Built a KYC validation platform handling 500K+ requests/hour at <50ms P99 — Java, Spring Boot, Redis.",
   },
   {
-    role: "SDE-II, Backend",
-    company: "ClearTax",
+    kind: "work",
+    heading: "SDE-II, Backend",
+    org: "ClearTax",
     date: "Jul 2024 — Aug 2025",
-    points: [
-      "Built customer-centric features across the Supply Chain suite, authoring detailed LLDs and design docs.",
-      "Implemented end-to-end observability across microservices (Grafana, Prometheus, Coralogix), cutting diagnosis time.",
-      "Engineered the Reports & Insights segment using multiple Temporal child workflows for scalable execution.",
-    ],
+    summary: "Cut production diagnosis time 92% with full-stack observability — Grafana, Prometheus, Coralogix.",
   },
   {
-    role: "SDE-I, Backend",
-    company: "ClearTax",
+    kind: "work",
+    heading: "SDE-I, Backend",
+    org: "ClearTax",
     date: "Jul 2022 — Jun 2024",
-    points: [
-      "Led end-to-end development of the company's financing product from concept to production.",
-      "Independently built the repayment module with a focus on performance and scalable design.",
-      "Engineered a mock-server system to simulate third-party integrations in staging.",
-    ],
+    summary: "Took a financing product to $2M+ ARR and built its repayment engine — Java, Spring Boot, PostgreSQL.",
   },
-  {
-    role: "Web Development Intern",
-    company: "School of Market Studies",
-    date: "May 2021 — Jul 2021",
-    points: [
-      "Built a full-stack stock-analysis platform in Django (MVT), tested across 500+ stocks with integrated algorithms.",
-    ],
-  },
+  { kind: "education", heading: "B.Tech, Civil Engineering", org: "IIT Roorkee", date: "Jul 2018 — Apr 2022" },
+  { kind: "education", heading: "Higher Secondary", org: "Gayatri Vidya Mandir, Charnal, Sehore", date: "2015 — 2017" },
+  { kind: "education", heading: "Schooling", org: "Kendriya Vidyalaya, Sehore", date: "2005 — 2015" },
 ];
 
 export default function Experience() {
@@ -47,47 +40,59 @@ export default function Experience() {
     <section id="experience" style={{ padding: "96px 0" }}>
       <div className="container-x">
         <Reveal>
-          <div style={{ marginBottom: 48 }}>
-            <div className="sec-kicker">03 — Where I&apos;ve worked</div>
+          <div style={{ marginBottom: 24 }}>
+            <div className="sec-kicker">02 — Where I&apos;ve been</div>
             <h2 className="sec-title">Experience</h2>
           </div>
         </Reveal>
-        <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-          {jobs.map((j) => (
-            <Reveal key={j.role + j.date}>
+        <Reveal delay={40}>
+          <div style={{ position: "relative", paddingLeft: 20, maxWidth: 680 }}>
+            <div
+              style={{
+                position: "absolute",
+                left: 4,
+                top: 5,
+                bottom: 5,
+                width: 1,
+                background: "var(--border)",
+              }}
+            />
+            {timeline.map((e) => (
               <div
-                className="card"
-                style={{ padding: 24, borderLeft: "3px solid var(--accent)" }}
+                key={e.heading + e.date}
+                className="journey-row"
+                style={{ position: "relative", padding: "7px 12px 7px 0" }}
               >
-                <div
+                <span
+                  className="journey-dot"
                   style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    flexWrap: "wrap",
-                    gap: 6,
-                    alignItems: "baseline",
+                    position: "absolute",
+                    left: -20,
+                    top: e.summary ? 14 : "50%",
+                    width: 9,
+                    height: 9,
+                    borderRadius: "50%",
+                    background: e.kind === "education" ? "var(--accent-2)" : "var(--accent)",
                   }}
-                >
-                  <div style={{ fontSize: "1.2rem", fontWeight: 700 }}>
-                    {j.role} ·{" "}
-                    <span style={{ color: "var(--accent)" }}>{j.company}</span>
-                  </div>
-                  <span className="mono" style={{ fontSize: "0.82rem", color: "var(--faint)" }}>
-                    {j.date}
+                />
+                <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 6 }}>
+                  <span style={{ fontSize: "0.92rem" }}>
+                    {e.heading} ·{" "}
+                    <span style={{ color: e.kind === "education" ? "var(--accent-2)" : "var(--accent)" }}>
+                      {e.org}
+                    </span>
+                  </span>
+                  <span className="mono" style={{ fontSize: "0.76rem", color: "var(--faint)" }}>
+                    {e.date}
                   </span>
                 </div>
-                <ul style={{ listStyle: "none", marginTop: 14, display: "flex", flexDirection: "column", gap: 9 }}>
-                  {j.points.map((p, i) => (
-                    <li key={i} style={{ color: "var(--muted)", paddingLeft: 22, position: "relative", fontSize: "0.98rem" }}>
-                      <span style={{ position: "absolute", left: 0, color: "var(--accent-2)" }}>▹</span>
-                      {p}
-                    </li>
-                  ))}
-                </ul>
+                {e.summary && (
+                  <div style={{ fontSize: "0.82rem", color: "var(--muted)", marginTop: 4 }}>{e.summary}</div>
+                )}
               </div>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );
