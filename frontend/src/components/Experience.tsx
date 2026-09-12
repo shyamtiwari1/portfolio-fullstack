@@ -53,6 +53,20 @@ const timeline: Entry[] = [
       "Co-head, Child Rights and You (CRY) — IIT Roorkee chapter · Cell Secretary, Administration, NSS IIT Roorkee.",
     ],
   },
+  {
+    kind: "education",
+    heading: "Higher Secondary",
+    org: "Gayatri Vidya Mandir, Charnal, Sehore",
+    date: "2015 — 2017",
+    points: [],
+  },
+  {
+    kind: "education",
+    heading: "Schooling",
+    org: "Kendriya Vidyalaya, Sehore",
+    date: "2005 — 2015",
+    points: [],
+  },
 ];
 
 export default function Experience() {
@@ -111,14 +125,16 @@ export default function Experience() {
                       {e.date}
                     </span>
                   </div>
-                  <ul style={{ listStyle: "none", marginTop: 14, display: "flex", flexDirection: "column", gap: 9 }}>
-                    {e.points.map((p, i2) => (
-                      <li key={i2} style={{ color: "var(--muted)", paddingLeft: 22, position: "relative", fontSize: "0.98rem" }}>
-                        <span style={{ position: "absolute", left: 0, color: "var(--accent-2)" }}>▹</span>
-                        {p}
-                      </li>
-                    ))}
-                  </ul>
+                  {e.points.length > 0 && (
+                    <ul style={{ listStyle: "none", marginTop: 14, display: "flex", flexDirection: "column", gap: 9 }}>
+                      {e.points.map((p, i2) => (
+                        <li key={i2} style={{ color: "var(--muted)", paddingLeft: 22, position: "relative", fontSize: "0.98rem" }}>
+                          <span style={{ position: "absolute", left: 0, color: "var(--accent-2)" }}>▹</span>
+                          {p}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
             </Reveal>
