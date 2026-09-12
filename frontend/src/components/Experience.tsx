@@ -21,62 +21,60 @@ export default function Experience() {
     <section id="experience" style={{ padding: "96px 0" }}>
       <div className="container-x">
         <Reveal>
-          <div style={{ marginBottom: 48 }}>
+          <div style={{ marginBottom: 24 }}>
             <div className="sec-kicker">03 — Where I&apos;ve been</div>
             <h2 className="sec-title">My journey</h2>
           </div>
         </Reveal>
-        <div style={{ position: "relative", paddingLeft: 28 }}>
-          <div
-            style={{
-              position: "absolute",
-              left: 6,
-              top: 8,
-              bottom: 8,
-              width: 2,
-              background: "var(--border)",
-            }}
-          />
-          {timeline.map((e, i) => (
-            <Reveal key={e.heading + e.date}>
-              <div style={{ position: "relative", marginBottom: i === timeline.length - 1 ? 0 : 18 }}>
+        <Reveal delay={40}>
+          <div style={{ position: "relative", paddingLeft: 20, maxWidth: 620 }}>
+            <div
+              style={{
+                position: "absolute",
+                left: 4,
+                top: 5,
+                bottom: 5,
+                width: 1,
+                background: "var(--border)",
+              }}
+            />
+            {timeline.map((e) => (
+              <div
+                key={e.heading + e.date}
+                style={{
+                  position: "relative",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  flexWrap: "wrap",
+                  gap: 6,
+                  padding: "7px 0",
+                }}
+              >
                 <span
                   style={{
                     position: "absolute",
-                    left: -28,
-                    top: 6,
-                    width: 14,
-                    height: 14,
+                    left: -20,
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    width: 9,
+                    height: 9,
                     borderRadius: "50%",
                     background: e.kind === "education" ? "var(--accent-2)" : "var(--accent)",
-                    boxShadow: "0 0 0 4px var(--bg)",
                   }}
                 />
-                <div className="card" style={{ padding: "18px 24px" }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      flexWrap: "wrap",
-                      gap: 6,
-                      alignItems: "baseline",
-                    }}
-                  >
-                    <div style={{ fontSize: "1.2rem", fontWeight: 700 }}>
-                      {e.heading} ·{" "}
-                      <span style={{ color: e.kind === "education" ? "var(--accent-2)" : "var(--accent)" }}>
-                        {e.org}
-                      </span>
-                    </div>
-                    <span className="mono" style={{ fontSize: "0.82rem", color: "var(--faint)" }}>
-                      {e.date}
-                    </span>
-                  </div>
-                </div>
+                <span style={{ fontSize: "0.92rem" }}>
+                  {e.heading} ·{" "}
+                  <span style={{ color: e.kind === "education" ? "var(--accent-2)" : "var(--accent)" }}>
+                    {e.org}
+                  </span>
+                </span>
+                <span className="mono" style={{ fontSize: "0.76rem", color: "var(--faint)" }}>
+                  {e.date}
+                </span>
               </div>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

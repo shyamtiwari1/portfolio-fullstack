@@ -22,7 +22,7 @@ export default function Skills() {
         </Reveal>
         <div
           className="skills-grid"
-          style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}
+          style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, alignItems: "start" }}
         >
           {groups.map((g, i) => (
             <Reveal key={g.title} delay={Math.min(i, 4) * 50}>
