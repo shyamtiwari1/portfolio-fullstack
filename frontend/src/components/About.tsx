@@ -47,6 +47,7 @@ export default function About() {
                   border: "1px solid var(--border)",
                   marginBottom: 8,
                 }}
+                unoptimized
               />
               <p style={{ color: "var(--muted)", fontSize: "1.05rem" }}>
                 I&apos;ve always been more interested in why something works than in getting it

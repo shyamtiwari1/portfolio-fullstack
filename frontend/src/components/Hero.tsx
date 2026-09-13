@@ -114,6 +114,7 @@ export default function Hero() {
               border: "1px solid var(--border)",
             }}
             priority
+            unoptimized
           />
         </Reveal>
         </div>

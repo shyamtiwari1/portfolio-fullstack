@@ -41,6 +41,7 @@ export default function Now() {
                 objectFit: "cover",
                 border: "1px solid var(--border)",
               }}
+              unoptimized
             />
           </Reveal>
           <Reveal delay={40}>
